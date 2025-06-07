@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us - Book Management</title>
+    <link rel="icon" href="/static/booklogo.jpg">
+    <style>
+        body {
+            background-image: url('/static/bbackgroun1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 50px auto;
+            padding: 40px;
+            width: 80%;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffcc00;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .nav-bar {
+            background-color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: black;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-bar">
+        <a href="/home" class="nav-link">Home</a>
+        <a href="/aboutus" class="nav-link">About Us</a>
+        <a href="/contact" class="nav-link">Contact</a>
+        <button onclick="history.back()">Back</button>
+    </div>
+
+    <div class="container">
+        <h1>About Us</h1>
+        <p>
+            Welcome to our Book Management System — a platform designed to make managing books easy, efficient, and enjoyable. 
+            Whether you are a librarian, student, teacher, or just a book lover, our goal is to simplify how you organize, 
+            track, and access books.
+        </p>
+        <p>
+            Our platform provides tools to:
+            <ul>
+                <li>Add, remove, and update book records.</li>
+                <li>Track borrowed and returned books.</li>
+                <li>Search and categorize books by title, author, or genre.</li>
+                <li>Enable user logins for personalized management.</li>
+            </ul>
+        </p>
+        <p>
+            Built using modern web technologies like <strong>FastAPI</strong> and <strong>PostgreSQL</strong>, our system ensures speed, 
+            reliability, and scalability. Our mission is to promote reading and knowledge-sharing through an intuitive and powerful 
+            digital solution.
+        </p>
+        <p>
+            Thank you for choosing us as your book management partner. We’re constantly improving, so feel free to reach out with 
+            feedback or suggestions.
+        </p>
+    </div>
+
+</body>
+</html>

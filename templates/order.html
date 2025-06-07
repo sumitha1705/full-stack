@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+    <link rel="icon" href="/static/booklogo.jpg">
+    <style>
+       body {
+            background-image: url('/static/order2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+            display: flex;
+            flex-direction: column;
+            
+}
+
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            margin-left: 60%;
+            
+        }
+
+        .nav-link {
+            margin: 0 20px;
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            height: 30px;
+            width: 70px;
+           
+            background-color: black;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .horizontal-line {
+            width: 100%;
+            height: 5px;
+            background-color: white;
+            margin: 10px;
+        }
+        .container{
+            background-color: rgba(0,0,0,0.6);  /* Light background */
+    padding: 30px;                /* Padding inside the box */
+    margin-top: 30px;             /* Space from top */
+    border-radius: 12px;          /* Rounded corners */
+    width: 500px;                 /* Make the form wider */
+    color: white;                 /* Text color */
+    border: 2px solid white;
+    font-size: 24px;
+          
+
+        }
+        table {
+    width: 100%;
+    border-spacing: 10px;  /* Add space between rows and cells */
+}
+
+td {
+    padding: 8px;
+    font-size: 18px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+        .design {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            height: auto;
+            width: 300px;
+            border-radius: 10px;
+            padding: 3px;
+            border: 2px solid white;
+        }
+
+        #one, .remove-btn, #confirm-btn {
+            color: black;
+            background-color: white;
+            height: 25px;
+            margin-top: 5px;
+            width: 100px;
+            cursor: pointer;
+
+        }
+        #bt{
+             width: 150px;       /* wider */
+    height: 45px;       /* taller */
+    font-size: 20px;    /* bigger text */
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#b1{
+    border-radius: 3px;
+    margin: auto 2px;
+    font-size: 18px;
+
+}
+#b2{
+    border-radius: 3px;
+    margin: auto 2px;
+    font-size: 18px;
+
+}
+#bt:hover {
+    background-color: #ddd;
+}
+/* Wrap radio buttons & label in a flex container */
+td > div.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;  /* space between radio buttons */
+}
+
+/* Optional: increase size of radio buttons */
+input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+#message{
+    text-align:center;
+    font-weight:bold; 
+    color: green;
+    font-size: 35px;
+    margin-bottom: 15px;
+
+}
+        
+        </style>
+</head>
+<body>
+    <nav class="navbar">
+    <a href="/home" class="nav-link">Home</a>
+    <a href="/aboutus" class="nav-link">About</a>
+    <a href="/contact" class="nav-link">Contact</a>
+    
+    <button onclick="history.back()" id="b1">Back</button>
+
+    <form action="/logout" method="get" style="display:inline;">
+        <button type="submit" id = b2>Logout</button>
+    </form>
+</nav>
+
+    <div class="horizontal-line"></div>
+    <center>
+    <p id="message" style="display: none;"></p>
+
+    <div class="container">
+        <h1>Confirm Order</h1>
+        <form action="#" method="post">
+            <table>
+                <tr>
+            <td>Name:</td>
+                <td><input type="text" id="name"  name="name" placeholder="Enter your name" required></td>
+            </tr>
+            <tr>
+            <td>Gender</td>
+            <td>
+                <div class="radio-group">
+                <input type="radio" name="gender" value = 'Male'>Male
+                <input type="radio" name="gender" value = 'Female'>Female
+                </div>
+            </td>
+
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" id="email" name="email" placeholder="Enter your email" required></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td><input type="number" id="phone" name="Phone" placeholder="Enter your Phone number" required></td>
+            </tr>
+
+            <tr>
+                <td>Address</td>
+                <td><textarea id="addr" name="addr" placeholder="Type your Address" required></textarea></td>
+            </tr>
+            <tr>
+                <td>Total Amt</td>
+                <td>{{total}}</td>
+            </tr>
+            <tr>
+            
+                <td>Mode of Pay</td>
+                <td><select id="books" name="books">
+                    <option value="Gpay">Gpay</option>
+                    <option value="Ondelivery">Ondelivery</option>
+                    <option value="netBanking">netBanking</option>
+                </select>
+            </td>
+            </tr>
+
+           <tr>
+        
+            <td colspan="2" style="text-align: center;"><button id = 'bt' onclick="dis(event)">Submit</button></td> 
+        </tr>
+
+
+            </table>
+        </form>
+        </div>
+    </center>
+ <script>
+    function dis(event) {
+        event.preventDefault();
+        const msg = document.getElementById("message");
+        msg.style.display = "block";             // Show the message
+        msg.style.backgroundColor = "white";     // Background
+        msg.style.color = "Green";               // Text color
+        msg.style.fontSize = "32px";             // Large font
+        msg.style.width = "400px";               // Width
+        msg.style.padding = "20px";              // Padding
+        msg.style.margin = "20px auto";          // Centered horizontally
+        msg.style.borderRadius = "10px";         // Rounded corners
+        msg.innerText = "Your order is placed";  // Message content
+    }
+</script>
+
+
+</body>
+</html>

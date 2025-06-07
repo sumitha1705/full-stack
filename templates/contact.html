@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us - Book Management</title>
+    <link rel="icon" href="/static/booklogo.jpg">
+    <style>
+        body {
+            background-image: url('/static/bbackgroun1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-bar {
+            background-color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 15px 0;
+            
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: black;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline ;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 50px auto;
+            padding: 40px;
+            width: 80%;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #51d1f1;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        
+
+        input, textarea {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            font-size: 18px;
+            background-color: #ffffff;
+            color: black;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        
+
+        p.center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-bar">
+        <a href="/home" class="nav-link">Home</a>
+        <a href="/aboutus" class="nav-link">About Us</a>
+        <a href="/contact" class="nav-link">Contact</a>
+        <button onclick="history.back()">Back</button>
+    </div>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form action = "#" method="post">
+            <table>
+                <tr>
+            <td>Name:</td>
+                <td><input type="text" id="name" name="name" placeholder="Enter your name" required></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" id="email" name="email" placeholder="Enter your email" required></td>
+            </tr>
+            <tr>
+                <td>Message</td>
+                <td><textarea id="message" name="message" placeholder="Type your message here..." required></textarea></td>
+            </tr>
+            <tr aria-colspan="2">
+                <button type="submit">Send Message</button>
+            </tr>
+            </table>
+        </form>
+
+        <p class="center">You can also reach us at <strong>www.BookBuddy.com</strong></p>
+    </div>
+
+</body>
+</html>

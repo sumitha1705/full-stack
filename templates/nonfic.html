@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Non-fic</title>
+        <link rel="icon" href="/static/booklogo.jpg">
+        <style>
+            body{
+                background-image: url('/static/ngbg1.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                min-height: 100vh;
+                backdrop-filter: brightness(0.7);
+                
+            }
+            .navbar {
+                margin-top: 30px;
+                margin-left: 65%;
+                display: flex;
+            }
+            #b1{
+                 height: 40px;
+                 width: 70px;
+                 padding: 3px;
+                 border-radius: 8px;
+                 font-size: 20px;
+            }
+            .nav-link{
+                background-color: white;
+                color: black;
+                height: 30px;
+                  border-radius: 8px;
+                width: 70px;
+                margin: 3px 10px;
+                font-size: 24px;
+                padding: 3px;
+                text-decoration: none;
+                text-align: center;
+
+            }
+            .Container{
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.6);
+            height: 600px;
+            width: 1050px;
+            border-radius: 10px;
+            border: 3px solid white;
+            margin: 0 auto;
+        }
+             .horizontal-line {
+            width: 100%;
+            height: 5px;
+            background-color: white;
+          
+            margin-top: 10px;
+        }
+        .search{
+            margin-top: 30px;
+            margin-bottom: 40px;
+            height: 40px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            padding-left: 10px;
+            font-size: 16px;
+            margin-right: 90px;
+        }
+         .comic
+        {
+             position: absolute;
+            text-align: center;
+            color: white;
+        }
+        
+
+        .comic img {
+            height: 160px;
+            width: 185px;
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+       
+
+        .comic h6 {
+            margin-top: 10px;
+            margin-bottom: 7px;
+        }
+        .et1{left: 30px; top: 45px;}
+        .et2 { left: 280px; top: 45px; }
+        .et3 { left: 530px; top: 45px; }
+        .et4 { left: 780px; top: 45px; }
+        .et5 {left: 30px; top:315px;}
+        .et6 {left: 280px; top:315px ;}
+        .et7 { left: 530px; top: 315px; }
+        .et8 { left: 780px; top: 315px; }
+        
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+        <a href="/home" class="nav-link" >Home</a>
+        <a href="/aboutus" class="nav-link">About</a>
+        <a href="/contact" class="nav-link">Contact</a>
+        <button onclick="history.back()" id = 'b1'>Back</button><br>
+        <a href="/cart" class = 'nav-link'id = "car1" >Cart</a><br>
+        </nav>
+        <center>
+        <div class="horizontal-line"></div>
+        <input type="text" class="search" id="one" placeholder="🔎 Search..." onkeyup="filterNonfiction()">
+        </center>
+        <div class="Container">
+        <div class="comic et1" data-title="Sapiens">
+        <img src="/static/nfsap.jpg">
+                <h6>
+                    Sapiens<br>
+                    Author: Yuval Harari<br>
+                    Amount:600<br>
+                    Rating:10⭐
+                </h6>
+                <button id = 'on' onclick = "addToCart('nonfiction', 1)">Add </button>
+    </div>
+    <div class="comic et2" data-title="Atomic Habits">
+        <img src="/static/nfato.jpg">
+                <h6>
+                    Atomic Habits<br>
+                    Author: James Clear<br>
+                    Amount:500<br>
+                    Rating:9⭐
+                </h6>
+                <button id = 'on' onclick = "addToCart('nonfiction', 2)">Add </button>
+                </div>
+     <div class="comic et3" data-title="The Psychology of Money">    
+        <img src="/static/nfpsy.jpg">
+                <h6>
+                   The Psychology of Money<br>
+                    Author: Morgan<br>
+                    Amount:990<br>
+                    Rating:10⭐
+                </h6>
+                <button id = 'on' onclick = "addToCart('nonfiction', 3)">Add </button>
+        </div>
+        <div class="comic et4" data-title="Ikigai">  
+        <img src="/static/nfiki.jpg">
+                <h6>
+                   Ikigai<br>
+                    Author: Francesc Miralles<br>
+                    Amount:870<br>
+                    Rating:8⭐
+                </h6>
+                <button id = 'on' onclick = "addToCart('nonfiction', 4)">Add </button>
+                </div>
+        <div class="comic et5" data-title="Becoming">  
+        <img src="/static/nfbec.jpg">
+                <h6>
+                    Becoming<br>
+                    Author: Michelle Obama<br>
+                    Amount:850<br>
+                    Rating:9⭐
+                </h6>
+                <button id = 'on' onclick = "addToCart('nonfiction', 5)">Add </button>
+                </div>
+        <div class="comic et6" data-title="Educated">  
+        <img src="/static/nfedu.jpg">
+                <h6>
+                    Educated<br>
+                    Author: Tara Westover<br>
+                    Amount:440<br>
+                    Rating:9⭐
+                </h6>
+                <button id = 'on' onclick = "addToCart('nonfiction', 6)">Add </button>
+            </div>
+        <div class="comic et7" data-title="Thinking Fast and Slow">  
+        <img src="/static/nfthink.jpg">
+                <h6>
+                    Thinking Fast and Slow<br>
+                    Author: Daniel Kahneman<br>
+                    Amount:590<br>
+                    Rating:8⭐
+                </h6>
+                <button id = 'on' onclick = "addToCart('nonfiction', 7)">Add </button>
+            </div>
+        <div class="comic et8" data-title="Cannot Hurt Me">  
+        <img src="/static/nfcannot.jpg">
+                <h6>
+                    Cannot Hurt me<br>
+                    Author: David Goggins<br>
+                    Amount:330<br>
+                    Rating:9⭐
+                </h6>
+                <button id = 'on' onclick = "addToCart('nonfiction', 8)">Add </button>
+        </div>
+    </div>
+    <script>
+        function filterNonfiction() {
+    const inp = document.getElementById("one").value.toLowerCase();
+    const non = document.querySelectorAll(".comic");
+    non.forEach(non => {
+        const title = non.getAttribute("data-title").toLowerCase();
+        if (title.includes(inp)) {
+            non.style.display = "block";
+        } else {
+            non.style.display = "none";
+        }
+    });
+}
+ function addToCart(category, bookId) {
+    fetch(`/add-to-cart/${category}/${bookId}`, {
+        method: "POST"
+    })
+    .then(response => {
+        console.log("Response status:", response.status);
+        return response.json();
+    })
+    .then(data => {
+        console.log("Response data:", data);
+        alert(data.message);
+    })
+    .catch(error => {
+        console.error("Fetch error:", error);
+    });
+}
+
+    </script>
+    </body>
+</html>

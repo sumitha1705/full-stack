@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Comic</title>
+    <link rel="icon" href="/static/booklogo.jpg">
+    <style>
+        body {
+            background-image: url('/static/comicbg2.png');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+         .navbar {
+                margin-top: 30px;
+                margin-left: 65%;
+                display: flex;
+            }
+            #b1{
+                 height: 40px;
+                 width: 70px;
+                 padding: 3px;
+                 border-radius: 8px;
+                 font-size: 20px;
+            }
+            .nav-link{
+                background-color: white;
+                color: black;
+                height: 30px;
+                  border-radius: 8px;
+                width: 75px;
+                margin: 3px 10px;
+                font-size: 24px;
+                padding: 3px;
+                text-decoration: none;
+                text-align: center;
+
+            }
+        .horizontal-line {
+            width: 100%;
+            height: 5px;
+            background-color: white;
+        }
+
+        .search-box {
+            margin-top: 30px;
+            margin-bottom: 40px;
+            height: 40px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            padding-left: 10px;
+            font-size: 16px;
+            margin-right: 90px;
+        }
+         .car {
+            margin-top: 30px;
+            margin-bottom: 80px;
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            border-radius: 10px;
+            padding-left: 10px;
+            font-size: 16px;
+           
+        }
+
+        .box {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.6);
+            height: 600px;
+            width: 1050px;
+            border-radius: 10px;
+            border: 3px solid white;
+            margin: 0 auto;
+        }
+
+        .comic-entry {
+            position: absolute;
+            text-align: center;
+            color: white;
+        }
+        
+
+        .comic-entry img {
+            height: 150px;
+            width: 195px;
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+       
+
+        .comic-entry h6 {
+            margin-top: 10px;
+            margin-bottom: 7px;
+        }
+       
+
+        .entry1 { left: 30px; top: 50px; }
+        .entry2 { left: 280px; top: 50px; }
+        .entry3 { left: 530px; top: 50px; }
+        .entry4 { left: 780px; top: 50px; }
+        .entry5 {left: 30px; top:300px;}
+        .entry6 {left: 280px; top:300px ;}
+        .entry7 { left: 530px; top: 300px; }
+        .entry8 { left: 780px; top: 300px; }
+        #car1{
+            background-color: aliceblue;
+            color: black;
+            height: 25px;
+            width: 60px;
+            font-size: large;
+            padding: 2px ; 
+            border-radius: 5px;
+           
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        #b1{
+            background-color: aliceblue;
+            color: black;
+            height: 28px;
+            width: 70px;
+            font-size: 19px;
+            padding: 2px ; 
+            border-radius: 5px;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/home" class="nav-link" >Home</a>
+        <a href="/aboutus" class="nav-link">About</a>
+        <a href="/contact" class="nav-link">Contact</a>
+        <button onclick="history.back()" id = 'b1'>Back</button><br>
+        <a href="/cart" class = 'nav-link'id = "car1" >Cart</a>
+
+    </nav>
+
+    <div class="horizontal-line"></div>
+
+    <center>
+        <input type="text" class="search-box" id="searchInput" placeholder="🔎 Search..." onkeyup="filterComics()">
+        
+       
+        <div class="box" id="comicBox">
+            <div class="comic-entry entry1" data-title="X-Men: Days of Future Past">
+                <img src="/static/comimg1.jpg">
+                <h6>
+                    X-Men: Days of Future Past<br>
+                    Author: Chris Claremont<br>
+                    Amount:899<br>
+                    Rating:10⭐
+                </h6>
+                <button id = 'on' onclick = "addToCart('comic',8)">Add </button>
+            </div>
+
+            <div class="comic-entry entry2" data-title="The Sandman: Preludes & Nocturnes">
+                <img src="/static/comimg2.jpg">
+                <h6>
+                    The Sandman: Preludes <br>
+                    Author: Neil Gaiman<br>
+                    Amount:198<br>
+                    Rating:9⭐
+                </h6>
+                <button id = 'on' onclick ="addToCart('comic',7)">Add </button>
+            </div>
+
+            <div class="comic-entry entry3" data-title="Watchmen">
+                <img src="/static/comimg4.jpg">
+                <h6>
+                    Watchmen<br>
+                    Author: Alan Moore<br>
+                    Amount:780<br>
+                    Rating:9⭐
+                </h6>
+                <button id = 'on' onclick = "addToCart('comic',6)">Add </button>
+            </div>
+
+            <div class="comic-entry entry4" data-title="Spider-Man: Blue">
+                <img src="/static/comimg3.jpg">
+                <h6>
+                    Spider-Man: Blue<br>
+                    Author: Jeph Loeb<br>
+                    Amount:650<br>
+                    Rating:8⭐
+                </h6>
+                <button id = 'on' onclick ="addToCart('comic',5)">Add </button>
+            </div>
+            <div class="comic-entry entry5" data-title="Batman: Year One">
+                <img src="/static/comimg5.jpg">
+                <h6>
+                    Batman: Year One<br>
+                    Author:Frank Miller<br>
+                     Amount:1899<br>
+                    Rating:8⭐
+                </h6>
+                <button id = 'on' onclick = "addToCart('comic',4)">Add </button>
+            </div>
+            <div class="comic-entry entry6" data-title="Batman The Untold">
+                <img src="/static/comimg6.png">
+                <h6>
+                    Batman The Untold<br>
+                    Author:Frank Spark<br>
+                     Amount:299<br>
+                    Rating:9⭐
+                </h6>
+                <button id = 'on' onclick = "addToCart('comic',3)">Add </button>
+            </div>
+            <div class="comic-entry entry7" data-title="Girl in BLUE">
+                <img src="/static/comimg7.png">
+
+                <h6>
+                    Girl in BLUE<br>
+                    Author:Bengemin Frank<br>
+                    Amount:499<br>
+                    Rating:10⭐
+                </h6>
+                <button id = 'on' onclick = "addToCart('comic',2)">Add </button>
+            </div>
+            <div class="comic-entry entry8" data-title="She wore the Smoke">
+                <img src="/static/comimg8.png">
+                <h6>
+                    She wore the Smoke<br>
+                    Author:William Sharp<br>
+                     Amount:199<br>
+                    Rating:9⭐
+                </h6>
+                <button id = 'on' onclick = "addToCart('comic',1)">Add </button>
+            </div>
+
+        </div>
+    </center>
+
+    <script>
+        function filterComics() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const comics = document.querySelectorAll(".comic-entry");
+
+            comics.forEach(comic => {
+                const title = comic.getAttribute("data-title").toLowerCase();
+                if (title.includes(input)) {
+                    comic.style.display = "block";
+                } else {
+                    comic.style.display = "none";
+                }
+            });
+        }
+       function addToCart(category, bookId) {
+    fetch(`/add-to-cart/${category}/${bookId}`, {
+        method: "POST"
+    })
+    .then(response => {
+        console.log("Response status:", response.status);
+        return response.json();
+    })
+    .then(data => {
+        console.log("Response data:", data);
+        alert(data.message);
+    })
+    .catch(error => {
+        console.error("Fetch error:", error);
+    });
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebPage</title>
+        <link rel="icon" href="/static/booklogo.jpg">
+        <style>
+       
+        .horizontal-line {
+            width: 100%;
+            height: 10px;
+            background-color:rgb(160, 9, 9);
+        }
+        .navbar {
+            justify-content: space-between;
+            display: flex;
+            padding: 15px;
+            align-items: center;
+            
+        }
+        .nav-link {
+            margin: 0 20px;
+            font-size: 24px;
+            text-decoration: none;
+            color:rgb(160, 9, 9);
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        .navbar h1{
+            font-style: italic;
+            color: rgb(160, 9, 9);
+            margin: 0;
+            font-size: 45px;
+
+        }
+        #hone {
+            
+            font-size: 32px;
+            font-style: italic;
+            color:rgb(160, 9, 9) ;
+        }
+        .pic {
+            margin-top: 50px;
+            margin-bottom: 10px;
+            height: 350px; /* or any height you want */
+            background-image: url('/static/sub.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            
+            }
+           .pic1 {
+                    position: absolute;
+                    top: 600px;
+                    left: 650px; 
+                    height: 290px;
+                    width: 210px;
+                    border-radius: 50%;
+                    border: 10px solid rgb(160, 9, 9);
+                    object-fit: cover;
+                }
+
+            .pic2 {
+                    position: absolute;
+                    top: 600px;
+                    left: 940px; /* Space this further right than pic1 */
+                    height: 290px;
+                    width: 210px;
+                    border-radius: 50%;
+                    border: 10px solid rgb(160, 9, 9);
+                    object-fit: cover;
+                }
+            .pic3{
+                    position: absolute;
+                    top: 920px;
+                    left: 760px; /* Space this further right than pic1 */
+                    height: 290px;
+                    width: 210px;
+                    border-radius: 50%;
+                    border: 10px solid rgb(160, 9, 9);
+                    object-fit: cover;
+                }
+            .pic4{
+                    position: absolute;
+                    top: 920px;
+                    left: 1050px; /* Space this further right than pic1 */
+                    height: 290px;
+                    width: 210px;
+                    border-radius: 50%;
+                    border: 10px solid rgb(160, 9, 9);
+                    object-fit: cover;
+                }
+            .quote {
+                position: absolute;
+                top: 620px; 
+                left: 100px; 
+                width: 500px;
+                font-size: 120px;
+                font-style: italic;
+                color: rgb(160, 9, 9);
+                font-family: 'Brush Script MT',cursive; ;
+            }
+            .exp{
+                height: 26px;
+                width: 110px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 10px ;
+                padding-right: 10px;
+                border-radius: 10px;
+                margin-top: 700px;
+                font-size: 32px;
+                background-color: white;
+                color: black;
+                cursor: pointer;
+                display: inline-block;
+                text-align: center;
+                border: 2px solid rgb(160, 9, 9);
+                text-decoration: none;
+            }
+            
+
+
+
+
+
+
+        </style>
+    </head>
+   <body style="background-color:hsl(0, 68%, 88%);">
+        <div class="horizontal-line"></div>
+        <nav class="navbar">
+            <h1>BookBuddy</h1>      
+            <div class = 'nav-link'>
+            <a href="/home" class="nav-link">Home</a>
+            <a href="/aboutus" class="nav-link">About Us</a>
+            <a href="/contact" class="nav-link">Contact</a> 
+            </div>
+              
+        </nav>
+
+        <div class="horizontal-line"></div>
+        <div class="pic"></div>
+        
+        <marquee direction = 'left'>
+            <h1 id = 'hone'>Welcome to BookBuddy! Enhance Your Knowledge with Books!..........</h1>
+        </marquee>
+        <img src = '/static/bbackgroun.jpg' class = 'pic1'>
+        <img src = '/static/img1.jpg' class ='pic2'>
+        <img src = '/static/img2.jpg' class ='pic3'>
+        <img src = '/static/img3.jpg' class = 'pic4'>
+        <div class="quote">
+            Knowledge is just a page away.
+        </div>
+        <center>
+        <a href="/explore" class="exp">Explore!</a>
+        </center>
+
+    </body>
+
+</html>

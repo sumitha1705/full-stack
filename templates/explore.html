@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Menu</title>
+        <link rel="icon" href="/static/booklogo.jpg">
+        <style>
+            body {
+            background-image: url('/static/eig1.webp');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+            .navbar {
+            display: flex;
+            justify-content: center;
+            margin-left: 60%;
+            padding: 15px 0;
+        }
+
+        .nav-link {
+            margin: 0 20px;
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        .nav-linkk{
+            background-color: white;
+                color: black;
+                height: 30px;
+                  border-radius: 8px;
+                width: 75px;
+                margin: 3px 10px;
+                font-size: 24px;
+                padding: 3px;
+                text-decoration: none;
+                text-align: center;
+        }
+        .nav-linkk:hover{
+            text-decoration: underline;
+            color: black;
+            height: 30px;
+            border-radius: 8px;
+
+        }
+
+        #hi{
+            font-size: 24px;
+        }
+        .horizontal-line{
+            width: 100%;
+            height:5px;
+            background-color: white;
+        }
+        .container {
+    width: 400px;
+    margin: 100px auto;
+    background-color: rgba(0, 0, 0, 0.6); /* translucent background for readability */
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    border:5px solid white ;
+}
+
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+        <a href="/home" class="nav-linkk">Home</a>
+        <a href="/aboutus" class="nav-linkk">About</a>
+        <a href="/contact" class="nav-linkk">Contact</a>
+        <button onclick="history.back()" id ='hi'>Back</button><br>
+    </nav>
+    <div class="horizontal-line"></div>
+    <div class ='container'>
+        <a href="/comic" class="nav-link">Comic</a><br><br>
+        <a href="/fiction" class="nav-link">Fiction</a><br><br>
+        <a href="/nonfic" class="nav-link">Non-Fiction</a>
+
+        
+    </div>
+
+
+    </body>
+</html>

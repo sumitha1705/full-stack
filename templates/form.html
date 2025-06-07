@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Form</title>
+</head>
+<body>
+    <h1>Add a Book</h1>
+    <form action="/posts" method="post">
+        <label>Book Title:</label><br>
+        <input type="text" name="booktitle"><br>
+        <label>Book Author:</label><br>
+        <input type="text" name="bookauth"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>All Books:</h2>
+    <ul>
+        {% if posts %}
+            {% for post in posts %}
+                <li>{{ post.booktitle }} by {{ post.bookauth }}</li>
+            {% endfor %}
+        {% else %}
+            <li>No books found.</li>
+        {% endif %}
+    </ul>
+</body>
+</html>
